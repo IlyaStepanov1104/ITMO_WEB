@@ -25,6 +25,8 @@ public class User {
     @Pattern(regexp = "[a-z]+", message = "Only lowercase latin letters expected")
     private String login;
 
+    private boolean disabled = false;
+
     @CreationTimestamp
     private Date creationTime;
 
@@ -51,5 +53,14 @@ public class User {
     public void setCreationTime(Date creationTime) {
         this.creationTime = creationTime;
     }
+
+    public boolean getDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
+    }
+
 }
 

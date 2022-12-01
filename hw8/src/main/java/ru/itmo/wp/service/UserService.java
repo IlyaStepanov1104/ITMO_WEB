@@ -23,6 +23,9 @@ public class UserService {
         return user;
     }
 
+    public void changeStatus(User user, boolean disabled) {
+        userRepository.updateDisabled(user.getId(), disabled);
+    }
     public boolean isLoginFree(String login) {
         return userRepository.countByLogin(login) == 0;
     }
